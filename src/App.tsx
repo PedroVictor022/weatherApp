@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { WeatherType } from './API/WeatherTypes';
 import './App.css';
 
 function App() {
-
-  useEffect(()=>{
-    fetch('http://api.weatherapi.com/v1/current.json?key=1123c83fa623413086e13551222608&q=Sao Paulo&aqi=no')
-      .then(res => res.json())
-      .then(data => console.log(data))
-
-  })
+  const [weather, setWeather] = useState({} as WeatherType);
+  const [city, setCity] = useState<string>();
+  const [sucess, setSucess] = useState<boolean>(false);
 
   return (
     <div className="App">
