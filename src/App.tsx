@@ -1,23 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
 
 function App() {
+
+  useEffect(()=>{
+    fetch('http://api.weatherapi.com/v1/current.json?key=1123c83fa623413086e13551222608&q=Sao Paulo&aqi=no')
+      .then(res => res.json())
+      .then(data => console.log(data))
+
+  })
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <form 
+          action=""
+
         >
-          Learn React
-        </a>
+          <input type="text" />
+          <button>Pesquisar</button>
+        </form>
+
       </header>
     </div>
   );
