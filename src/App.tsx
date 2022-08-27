@@ -11,14 +11,14 @@ function App() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    if(city.trim()) {
+    if (city.trim()) {
       try {
         const data = await weatherApiRes(city);
         setWeather(data);
         setCity("");
         setSucess(true);
         console.log(`Pesquisa concluida com sucesso!`)
-      } catch(err) {
+      } catch (err) {
         alert("Cidade nao encontrada!");
         setSucess(false);
       }
@@ -30,11 +30,11 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <form 
+        <form
           onSubmit={handleSubmit}
         >
-          <input 
-            type="text" 
+          <input
+            type="text"
             name="city"
             value={city}
             onChange={e => setCity(e.target.value)}
@@ -45,8 +45,22 @@ function App() {
         </form>
 
         <div className="weather-render">
-          {/* <p>City {weather.location.name}</p>
-          <p>{weather.location.region} - {weather.location.country}</p> */}
+
+          {
+            sucess ?
+              (
+                <div className="weather-container-infos">
+                  <h1>{weather.location.name}</h1>
+                  <h2>{weather.location.region} - {weather.location.country}</h2>
+                  <h1>{weather.current.temp_c} °C</h1>
+                </div>
+              ) :
+              (
+                <div>
+
+                </div>
+              )
+          }
         </div>
 
       </header>
