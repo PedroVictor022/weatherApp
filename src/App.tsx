@@ -45,8 +45,8 @@ function App() {
         </form>
 
         <div className="weather-render">
-          <p>City {weather.location.name}</p>
-          <p>{weather.location.region} - {weather.location.country}</p>
+          {/* <p>City {weather.location.name}</p>
+          <p>{weather.location.region} - {weather.location.country}</p> */}
         </div>
 
       </header>
