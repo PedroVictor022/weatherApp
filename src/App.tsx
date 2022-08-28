@@ -6,7 +6,7 @@ import { Container, WeatherApp, WeatherInfos, WeatherInput } from './Styles/UI';
 function App() {
   const [weather, setWeather] = useState({} as WeatherType);
   const [city, setCity] = useState("");
-  const [sucess, setSucess] = useState<boolean>(false);
+  const [sucess, setSucess] = useState<boolean>();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -23,7 +23,6 @@ function App() {
         setSucess(false);
       }
     }
-
   }
 
   return (
@@ -43,11 +42,18 @@ function App() {
         {
           sucess?
           <WeatherInfos >  
-          <h1 className='location-name'>{weather.location.name}</h1>
-          <h2 className='location-region'>{weather.location.region} - {weather.location.country}</h2>
-          <p className='current-temp'>{weather.current.temp_c} °C</p>
-          <p>{weather.current.condition.text}</p>
-          <p className='hour'>Hora: {weather.location.localtime.slice(11,16)}</p>
+          <p 
+            className='location-name'>{weather.location.name}
+          </p>
+          <p 
+            className='location-region'>{weather.location.region} - {weather.location.country}
+          </p>
+          <p 
+            className='current-temp'>{weather.current.temp_c} °C
+          </p>
+          <p 
+            className='hour'>Hour: {weather.location.localtime.slice(11,16)} -- {weather.current.condition.text}
+          </p>
           
         </WeatherInfos>
         :

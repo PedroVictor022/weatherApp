@@ -39,17 +39,29 @@ export const WeatherInput = styled.form`
       border: none;
    }
 
+   button {
+      padding: 0.2rem;
+      border-radius: 0.4rem;
+      border: none;
+      background-color: #1146d6;
+      color: #fefefe;
+      font-weight: 600;
+   }
+
 `
 
 export const WeatherInfos = styled.div`
    margin-top: 1rem;
    .location-name{
       font-size: 32px;
+      font-weight: 700;
    }
    .location-region{
       font-size: 26px;
+      font-weight: 500;
    }
    .current-temp {
       font-size: 30px;
+      font-weight: 700;
    }
 `
