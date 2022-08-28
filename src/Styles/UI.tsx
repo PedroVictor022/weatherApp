@@ -32,11 +32,17 @@ export const WeatherInput = styled.form`
    align-items: center;
    gap: 0.5rem;
 
-   margin-bottom:1rem;
+   input { 
+      padding: 0.2rem;
+      border-radius: 0.4rem;
+      outline: none;
+      border: none;
+   }
+
 `
 
 export const WeatherInfos = styled.div`
-   
+   margin-top: 1rem;
    .location-name{
       font-size: 32px;
    }
