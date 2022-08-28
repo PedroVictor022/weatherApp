@@ -43,10 +43,12 @@ function App() {
         {
           sucess?
           <WeatherInfos >  
-          <h1>{weather.location.name}</h1>
-          <h2>{weather.location.region} - {weather.location.country}</h2>
-          <p>{weather.current.temp_c} °C</p>
-          <p>Hora: {weather.location.localtime.slice(11,16)}</p>
+          <h1 className='location-name'>{weather.location.name}</h1>
+          <h2 className='location-region'>{weather.location.region} - {weather.location.country}</h2>
+          <p className='current-temp'>{weather.current.temp_c} °C</p>
+          <p>{weather.current.condition.text}</p>
+          <p className='hour'>Hora: {weather.location.localtime.slice(11,16)}</p>
+          
         </WeatherInfos>
         :
         <WeatherInfos style={{ display: 'none' }} />

@@ -21,6 +21,7 @@ export const WeatherApp = styled.div`
    flex-direction: column;
    align-items:center;
    justify-content: center;
+   border-radius: 2rem;
 
    color: #f3f3f3;
    background-color: #1a1a1a;
@@ -36,4 +37,13 @@ export const WeatherInput = styled.form`
 
 export const WeatherInfos = styled.div`
    
+   .location-name{
+      font-size: 32px;
+   }
+   .location-region{
+      font-size: 26px;
+   }
+   .current-temp {
+      font-size: 30px;
+   }
 `
